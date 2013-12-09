@@ -4,11 +4,11 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 4,
-			"architecture" : "x64"
+			"revision" : 0,
+			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 0.0, 44.0, 1543.0, 181.0 ],
+		"rect" : [ 9.0, 44.0, 1421.0, 767.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -654,7 +654,7 @@
 					"patching_rect" : [ 235.603271, 104.0, 75.0, 28.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 3,
-					"presentation_rect" : [ 134.994522, 112.814041, 38.0, 39.0 ],
+					"presentation_rect" : [ 134.994522, 112.814041, 41.0, 39.0 ],
 					"text" : "show analog ins"
 				}
 
@@ -673,8 +673,8 @@
 						"appversion" : 						{
 							"major" : 6,
 							"minor" : 1,
-							"revision" : 4,
-							"architecture" : "x64"
+							"revision" : 0,
+							"architecture" : "x86"
 						}
 ,
 						"rect" : [ 228.0, 44.0, 646.0, 536.0 ],
@@ -701,13 +701,12 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-10",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 121.0, 98.0, 53.0, 31.0 ],
-									"text" : "digital 7 0"
+									"text" : "save"
 								}
 
 							}
@@ -914,8 +913,8 @@
 										"appversion" : 										{
 											"major" : 6,
 											"minor" : 1,
-											"revision" : 4,
-											"architecture" : "x64"
+											"revision" : 0,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 227.0, 66.0, 1115.0, 850.0 ],
@@ -1099,8 +1098,8 @@
 														"appversion" : 														{
 															"major" : 6,
 															"minor" : 1,
-															"revision" : 4,
-															"architecture" : "x64"
+															"revision" : 0,
+															"architecture" : "x86"
 														}
 ,
 														"rect" : [ 5.0, 46.0, 1527.0, 916.0 ],
@@ -3469,7 +3468,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "init" ],
 									"patching_rect" : [ 70.0, 40.0, 25.0, 25.0 ]
 								}
 
@@ -3729,8 +3728,8 @@
 						"appversion" : 						{
 							"major" : 6,
 							"minor" : 1,
-							"revision" : 4,
-							"architecture" : "x64"
+							"revision" : 0,
+							"architecture" : "x86"
 						}
 ,
 						"rect" : [ 976.0, 44.0, 605.0, 291.0 ],
@@ -3791,8 +3790,8 @@
 										"appversion" : 										{
 											"major" : 6,
 											"minor" : 1,
-											"revision" : 4,
-											"architecture" : "x64"
+											"revision" : 0,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 50.0, 94.0, 1075.0, 535.0 ],
@@ -4294,10 +4293,10 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.text",
-							"parameter_shortname" : "live.text",
-							"parameter_type" : 2,
+							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_mmax" : 1.0,
-							"parameter_enum" : [ "val1", "val2" ]
+							"parameter_type" : 2,
+							"parameter_shortname" : "live.text"
 						}
 
 					}
@@ -4377,8 +4376,8 @@
 						"appversion" : 						{
 							"major" : 6,
 							"minor" : 1,
-							"revision" : 4,
-							"architecture" : "x64"
+							"revision" : 0,
+							"architecture" : "x86"
 						}
 ,
 						"rect" : [ 456.0, 104.0, 772.0, 577.0 ],
@@ -4708,8 +4707,8 @@
 						"appversion" : 						{
 							"major" : 6,
 							"minor" : 1,
-							"revision" : 4,
-							"architecture" : "x64"
+							"revision" : 0,
+							"architecture" : "x86"
 						}
 ,
 						"rect" : [ 10.0, 59.0, 667.0, 547.0 ],
@@ -4967,7 +4966,7 @@
 					"fontname" : "Trebuchet MS",
 					"fontsize" : 10.0,
 					"id" : "obj-26",
-					"items" : [ "select...", ",", "Bluetooth-Serial-1", ",", "Bluetooth-Serial-2", ",", "Bluetooth-Modem", ",", "Bluetooth-PDA-Sync", ",", "usbmodem12341" ],
+					"items" : [ "select...", ",", "Bluetooth-Serial-1", ",", "Bluetooth-Serial-2", ",", "StarPhone-WirelessiAP", ",", "Bluetooth-Modem", ",", "FireFly-2A1E-RNI-SPP", ",", "Bluetooth-PDA-Sync" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -4991,7 +4990,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 100.181824, 857.0, 120.0, 16.0 ],
-					"text" : "pinMode 24 0"
+					"text" : "digitalWrite 2 0"
 				}
 
 			}
@@ -5009,8 +5008,8 @@
 						"appversion" : 						{
 							"major" : 6,
 							"minor" : 1,
-							"revision" : 4,
-							"architecture" : "x64"
+							"revision" : 0,
+							"architecture" : "x86"
 						}
 ,
 						"rect" : [ 352.0, 200.0, 1169.0, 661.0 ],
@@ -5042,7 +5041,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 154.0, 93.0, 90.0, 18.0 ],
-									"text" : "24 pinMode 0"
+									"text" : "2 digitalWrite 0"
 								}
 
 							}
@@ -5117,7 +5116,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 103.0, 208.926941, 90.0, 18.0 ],
-									"text" : "pinMode 24 0"
+									"text" : "digitalWrite 2 0"
 								}
 
 							}
@@ -5135,8 +5134,8 @@
 										"appversion" : 										{
 											"major" : 6,
 											"minor" : 1,
-											"revision" : 4,
-											"architecture" : "x64"
+											"revision" : 0,
+											"architecture" : "x86"
 										}
 ,
 										"rect" : [ 25.0, 69.0, 640.0, 480.0 ],
@@ -5446,7 +5445,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "init" ],
 					"patching_rect" : [ 137.557831, 25.573059, 25.0, 25.0 ]
 				}
 
@@ -5476,7 +5475,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "init" ],
 					"patching_rect" : [ 85.603302, 25.573059, 25.0, 25.0 ]
 				}
 
@@ -6574,7 +6573,7 @@
 					"numoutlets" : 1,
 					"offset" : [ -28.181818, -2.727273 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 405.181824, 298.289276, 28.09091, 115.363632 ],
+					"patching_rect" : [ 407.603271, 298.289276, 28.09091, 115.363632 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 534.754822, 42.628082, 23.785156, 124.371918 ],
 					"varname" : "maxuino-Dpin-[18]"
@@ -6638,7 +6637,7 @@
 					"numoutlets" : 1,
 					"offset" : [ -28.181818, -2.727273 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 329.181824, 298.289276, 28.09091, 115.363632 ],
+					"patching_rect" : [ 331.603302, 298.289276, 28.09091, 115.363632 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 458.754852, 42.628082, 23.785156, 124.371918 ],
 					"varname" : "maxuino-Dpin-[14]"
@@ -8898,102 +8897,6 @@
 					"source" : [ "obj-93", 1 ]
 				}
 
-			}
- ],
-		"parameters" : 		{
-			"obj-674::obj-126" : [ "value[25]", "value", 0 ],
-			"obj-16" : [ "live.text", "live.text", 0 ],
-			"obj-693::obj-126" : [ "value[36]", "value", 0 ],
-			"obj-36::obj-126" : [ "value[54]", "value", 0 ],
-			"obj-692::obj-126" : [ "value[37]", "value", 0 ],
-			"obj-8::obj-126" : [ "value[69]", "value", 0 ],
-			"obj-715::obj-126" : [ "value[44]", "value", 0 ],
-			"obj-643::obj-126" : [ "value[3]", "value", 0 ],
-			"obj-652::obj-126" : [ "value[17]", "value", 0 ],
-			"obj-713::obj-126" : [ "value[46]", "value", 0 ],
-			"obj-644::obj-126" : [ "value[4]", "value", 0 ],
-			"obj-27::obj-126" : [ "value[61]", "value", 0 ],
-			"obj-677::obj-126" : [ "value[22]", "value", 0 ],
-			"obj-645::obj-126" : [ "value[5]", "value", 0 ],
-			"obj-696::obj-126" : [ "value[33]", "value", 0 ],
-			"obj-667::obj-126" : [ "value[10]", "value", 0 ],
-			"obj-694::obj-126" : [ "value[35]", "value", 0 ],
-			"obj-757::obj-126" : [ "value[53]", "value", 0 ],
-			"obj-690::obj-126" : [ "value[39]", "value", 0 ],
-			"obj-9::obj-126" : [ "value[68]", "value", 0 ],
-			"obj-655::obj-126" : [ "value[14]", "value", 0 ],
-			"obj-727::obj-126" : [ "value[40]", "value", 0 ],
-			"obj-504::obj-126" : [ "value", "value", 0 ],
-			"obj-714::obj-126" : [ "value[45]", "value", 0 ],
-			"obj-28::obj-126" : [ "value[60]", "value", 0 ],
-			"obj-648::obj-126" : [ "value[8]", "value", 0 ],
-			"obj-697::obj-126" : [ "value[32]", "value", 0 ],
-			"obj-695::obj-126" : [ "value[34]", "value", 0 ],
-			"obj-758::obj-126" : [ "value[52]", "value", 0 ],
-			"obj-658::obj-126" : [ "value[11]", "value", 0 ],
-			"obj-11::obj-126" : [ "value[67]", "value", 0 ],
-			"obj-651::obj-126" : [ "value[18]", "value", 0 ],
-			"obj-707::obj-126" : [ "value[30]", "value", 0 ],
-			"obj-650::obj-126" : [ "value[19]", "value", 0 ],
-			"obj-718::obj-126" : [ "value[41]", "value", 0 ],
-			"obj-642::obj-126" : [ "value[2]", "value", 0 ],
-			"obj-29::obj-126" : [ "value[59]", "value", 0 ],
-			"obj-710::obj-126" : [ "value[49]", "value", 0 ],
-			"obj-759::obj-126" : [ "value[51]", "value", 0 ],
-			"obj-17::obj-126" : [ "value[66]", "value", 0 ],
-			"obj-672::obj-126" : [ "value[27]", "value", 0 ],
-			"obj-657::obj-126" : [ "value[12]", "value", 0 ],
-			"obj-691::obj-126" : [ "value[38]", "value", 0 ],
-			"obj-670::obj-126" : [ "value[29]", "value", 0 ],
-			"obj-33::obj-126" : [ "value[56]", "value", 0 ],
-			"obj-656::obj-126" : [ "value[13]", "value", 0 ],
-			"obj-646::obj-126" : [ "value[6]", "value", 0 ],
-			"obj-698::obj-126" : [ "value[31]", "value", 0 ],
-			"obj-31::obj-126" : [ "value[58]", "value", 0 ],
-			"obj-687::obj-126" : [ "value[20]", "value", 0 ],
-			"obj-647::obj-126" : [ "value[7]", "value", 0 ],
-			"obj-711::obj-126" : [ "value[48]", "value", 0 ],
-			"obj-20::obj-126" : [ "value[63]", "value", 0 ],
-			"obj-675::obj-126" : [ "value[24]", "value", 0 ],
-			"obj-768::obj-126" : [ "value[50]", "value", 0 ],
-			"obj-18::obj-126" : [ "value[65]", "value", 0 ],
-			"obj-673::obj-126" : [ "value[26]", "value", 0 ],
-			"obj-717::obj-126" : [ "value[42]", "value", 0 ],
-			"obj-671::obj-126" : [ "value[28]", "value", 0 ],
-			"obj-34::obj-126" : [ "value[55]", "value", 0 ],
-			"obj-654::obj-126" : [ "value[15]", "value", 0 ],
-			"obj-716::obj-126" : [ "value[43]", "value", 0 ],
-			"obj-32::obj-126" : [ "value[57]", "value", 0 ],
-			"obj-653::obj-126" : [ "value[16]", "value", 0 ],
-			"obj-641::obj-126" : [ "value[1]", "value", 0 ],
-			"obj-678::obj-126" : [ "value[21]", "value", 0 ],
-			"obj-712::obj-126" : [ "value[47]", "value", 0 ],
-			"obj-24::obj-126" : [ "value[62]", "value", 0 ],
-			"obj-676::obj-126" : [ "value[23]", "value", 0 ],
-			"obj-649::obj-126" : [ "value[9]", "value", 0 ],
-			"obj-19::obj-126" : [ "value[64]", "value", 0 ]
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "maxuino-Dpin-gui.maxpat",
-				"bootpath" : "/Users/ali/Dropbox/for-max/3rd Party for Max OS X/maxuino_1.0b/maxuino_b017/support",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Teensy++.png",
-				"bootpath" : "/Users/ali/Dropbox/for-max/3rd Party for Max OS X/maxuino_1.0b/maxuino_b017/hardware",
-				"patcherrelativepath" : "../hardware",
-				"type" : "PNG ",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxuino-hardware.txt",
-				"bootpath" : "/Users/ali/Dropbox/for-max/3rd Party for Max OS X/maxuino_1.0b/maxuino_b017/hardware",
-				"patcherrelativepath" : "../hardware",
-				"type" : "TEXT",
-				"implicit" : 1
 			}
  ]
 	}

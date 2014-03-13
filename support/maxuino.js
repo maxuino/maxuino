@@ -309,7 +309,7 @@ function msg_int(a) {
             boardConfigA();
         }else if(command[1] == 108) { 
             boardConfig(); 
-        }else if(command[1] == 114) {
+        }else if(command[1] == 8) {
             outlet(1, "stepper "+command[2]+ " done");
         }
     }

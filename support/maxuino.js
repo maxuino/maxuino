@@ -310,7 +310,7 @@ function msg_int(a) {
         }else if(command[1] == 108) { 
             boardConfig(); 
         }else if(command[1] == 114) {
-            outlet(1, "stepper "+command[2]+ " done");
+            outlet(1, "stepper",command[2],"done");
         }
     }
     if (gather) {

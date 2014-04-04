@@ -1,6 +1,6 @@
 /*
 Maxuino JS - decodes and encodes commands that are Max and arduino familiar for the serial port and then Firmata
-Chris Coleman and Ali Momeni
+Chris Coleman and Ali Momeni 
 2009-2013
 */
 
@@ -34,8 +34,23 @@ var digiCombo = createArray(8);
 for (var p = 0; p < portsbyte.length; p++) { portsbyte[p] = 0; }
 for (var q = 0; q < digiCombo.length; q++) { digiCombo[q] = 0; }
 
+//Pin Gui Objects
+var pins = new Array(128);
+var comments = new Array(128);
+var therouter;
+var thefunnel;
+var maxuinoGui = this.patcher.getnamed('maxuino-gui');
+var tomaxuino = maxuinoGui.subpatcher().getnamed("tomaxuino");
+var guiOn = maxuinoGui.subpatcher().getnamed("guiOn");
+var guiUpdate = maxuinoGui.subpatcher().getnamed("guiUpdate");
+var bgColor;
+
 //track total number of pins for the current board
 var pinTotal = 0;
+
+function bang(){
+    post('test');
+}
 
 //INCOMING COMMANDS FROM MAX ###############################################
 
@@ -384,13 +399,32 @@ function boardConfig() {
     var pinNum = 0;
     var tempArray = new Array();
     var tempCount = 0;
-    
+    //Remove UI objects already in existence (i.e. previously called)
+    maxuinoGui.subpatcher().remove(therouter);
+    maxuinoGui.subpatcher().remove(thefunnel);
+    maxuinoGui.subpatcher().remove(bgColor);
+    for(var k = 0; k <pins.length; k++){
+    	maxuinoGui.subpatcher().remove(pins[k]);
+    	maxuinoGui.subpatcher().remove(comments[k]);
+    }
     for (var i=2; i<command.length; i++) {
-        
         if(command[i]==127) {
             for (var v = 0; v < tempArray.length; v+=2) {
                 pinModes[pinNum][tempArray[v]]=1;
-            };
+            };            
+            //Create Pins and their identifying comments
+            pins[pinNum] = maxuinoGui.subpatcher().newdefault(350+(pinNum*50), 105, "bpatcher", "dpin");
+            comments[pinNum] = maxuinoGui.subpatcher().newdefault(350+(pinNum*50), 50, "comment");
+            comments[pinNum].message("set", pinNum);
+            comments[pinNum].message("presentation", 1);
+            comments[pinNum].message("patching_rect", 64.1+(22.18*pinNum), 278.9, 17.5, 18); 
+            comments[pinNum].message("presentation_rect", 192.5+(22.18*pinNum), 29.2, 17.5, 18);
+            pins[pinNum].varname = "pin[" + pinNum + "]";
+            maxuinoGui.subpatcher().message('script', 'sendbox', 'pin[' + pinNum + ']', 'presentation', 1);
+            maxuinoGui.subpatcher().message('script', 'sendbox', "pin[" + pinNum + "]", 'offset', -28, 1.8);
+            maxuinoGui.subpatcher().message('script', 'sendbox', "pin[" + pinNum + "]", 'patching_rect', 61.7+(pinNum*22.2), 298.3, 22.2, 115.4); 
+            maxuinoGui.subpatcher().message('script', 'sendbox', "pin[" + pinNum + "]", 'presentation_rect', 192.2+(pinNum*22.2), 42.6, 23.2, 124); 
+
             outlet(2, "pinConfig" + pinNum + '= ', pinModes[pinNum]);
             pinNum++;
             tempCount = 0;
@@ -400,8 +434,27 @@ function boardConfig() {
             tempCount++;
         }
     } 
+
+    //Create and connect UI objects
+    var args = [];
+    for(j = 0; j <pinNum; j++){
+    	args.push(j);
+    }
+    therouter = maxuinoGui.subpatcher().newdefault(86, 215, "route", args);
+	thefunnel = maxuinoGui.subpatcher().newdefault(65, 495, "funnel", pinNum);
+    maxuinoGui.subpatcher().connect(guiOn, 1, therouter, 0);
+    maxuinoGui.subpatcher().connect(guiUpdate, 1, therouter, 0);
+	maxuinoGui.subpatcher().connect(thefunnel, 0, tomaxuino, 0);
+    for (p = 0; p <pinNum; p++){
+        maxuinoGui.subpatcher().connect(therouter, p, pins[p], 0);
+        maxuinoGui.subpatcher().connect(pins[p], 0, thefunnel, p);
+    }
     pinTotal = pinNum;
     cleanArray(command);
+    bgColor = maxuinoGui.subpatcher().newdefault(909, 606.7, "panel");
+    bgColor.message("presentation", 1);
+    bgColor.message("presentation_rect", 181, 2.6, 23*pinNum, 165); 
+    bgColor.message("bgcolor", 0.09, .56, .58); 
 }
 
 function boardConfigA() {

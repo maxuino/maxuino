@@ -4,11 +4,11 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 3,
+			"revision" : 0,
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 7.0, 332.0, 220.0, 163.0 ],
+		"rect" : [ 1440.0, 62.0, 230.0, 160.0 ],
 		"bgcolor" : [ 0.0, 0.66499, 0.728017, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -30,13 +30,36 @@
 		"tags" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 132.0, 100.0, 20.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-19",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 464.0, 457.0, 34.0, 20.0 ],
+					"text" : "print"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 277.0, 446.0, 20.0, 20.0 ],
-					"presentation_rect" : [ 278.0, 446.0, 0.0, 0.0 ]
+					"patching_rect" : [ 277.0, 446.0, 20.0, 20.0 ]
 				}
 
 			}
@@ -104,7 +127,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 89.333984, 405.75, 110.0, 18.0 ],
-					"text" : "244 24 0"
+					"text" : "244 18 2"
 				}
 
 			}
@@ -264,7 +287,7 @@
 						"appversion" : 						{
 							"major" : 6,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 0,
 							"architecture" : "x86"
 						}
 ,
@@ -1010,6 +1033,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-34", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-125", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1061,6 +1093,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-34", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-34", 2 ]
 				}
 
 			}
@@ -1254,6 +1295,73 @@
 					"source" : [ "obj-85", 0 ]
 				}
 
+			}
+ ],
+		"parameters" : 		{
+			"obj-125::obj-74::obj-126" : [ "value[13]", "value", 0 ],
+			"obj-125::obj-104::obj-126" : [ "value[18]", "value", 0 ],
+			"obj-125::obj-20::obj-126" : [ "value[2]", "value", 0 ],
+			"obj-125::obj-99::obj-126" : [ "value[17]", "value", 0 ],
+			"obj-125::obj-29::obj-126" : [ "value[3]", "value", 0 ],
+			"obj-125::obj-7::obj-126" : [ "value", "value", 0 ],
+			"obj-125::obj-89::obj-126" : [ "value[16]", "value", 0 ],
+			"obj-125::obj-13::obj-126" : [ "value[1]", "value", 0 ],
+			"obj-125::obj-82::obj-126" : [ "value[15]", "value", 0 ],
+			"obj-125::obj-16" : [ "live.text", "live.text", 0 ],
+			"obj-125::obj-111::obj-126" : [ "value[19]", "value", 0 ],
+			"obj-125::obj-78::obj-126" : [ "value[14]", "value", 0 ],
+			"obj-125::obj-66::obj-126" : [ "value[11]", "value", 0 ],
+			"obj-125::obj-50::obj-126" : [ "value[7]", "value", 0 ],
+			"obj-125::obj-58::obj-126" : [ "value[9]", "value", 0 ],
+			"obj-125::obj-62::obj-126" : [ "value[10]", "value", 0 ],
+			"obj-125::obj-70::obj-126" : [ "value[12]", "value", 0 ],
+			"obj-125::obj-46::obj-126" : [ "value[6]", "value", 0 ],
+			"obj-125::obj-34::obj-126" : [ "value[4]", "value", 0 ],
+			"obj-125::obj-40::obj-126" : [ "value[5]", "value", 0 ],
+			"obj-125::obj-54::obj-126" : [ "value[8]", "value", 0 ]
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "maxuino.js",
+				"bootpath" : "/Applications/Max 6.1/Cycling '74/maxuino/support",
+				"patcherrelativepath" : "./maxuino/support",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxuino-gui.maxpat",
+				"bootpath" : "/Applications/Max 6.1/Cycling '74/maxuino/support",
+				"patcherrelativepath" : "./maxuino/support",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "dpin.maxpat",
+				"bootpath" : "/Applications/Max 6.1/Cycling '74/maxuino/support",
+				"patcherrelativepath" : "./maxuino/support",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Teensy++.png",
+				"bootpath" : "/Applications/Max 6.1/Cycling '74/maxuino/hardware",
+				"patcherrelativepath" : "./maxuino/hardware",
+				"type" : "PNG ",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxuino-hardware.txt",
+				"bootpath" : "/Applications/Max 6.1/Cycling '74/maxuino/hardware",
+				"patcherrelativepath" : "./maxuino/hardware",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxuino-debug.maxpat",
+				"bootpath" : "/Applications/Max 6.1/Cycling '74/maxuino/support",
+				"patcherrelativepath" : "./maxuino/support",
+				"type" : "JSON",
+				"implicit" : 1
 			}
  ]
 	}

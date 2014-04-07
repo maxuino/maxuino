@@ -455,6 +455,14 @@ function boardConfig() {
     bgColor.message("presentation", 1);
     bgColor.message("presentation_rect", 181, 2.6, 23*pinNum, 165); 
     bgColor.message("bgcolor", 0.09, .56, .58); 
+
+    //Set up Maxuino Gui Window Upon Loading Board
+    var xx = 250; //Place holder for window starting position 
+    var yy = 150; //Place holder for window starting position
+    var ww = 431+(23*pinNum); //Width
+    var hh = 325; //Placeholder for height
+    maxuinoGui.subpatcher().window("size", xx, yy, ww, hh);
+    maxuinoGui.subpatcher().window("exec");
 }
 
 function boardConfigA() {

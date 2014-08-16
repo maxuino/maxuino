@@ -450,15 +450,11 @@ function boardConfig() {
     bgColor.message("presentation_rect", 181, 2.6, 23*pinNum, 165); 
     bgColor.message("bgcolor", 0.09, .56, .58); 
 
-    //Set pin selection Window
+    //Set pin selection menu
     for(var k = 0; k < pinNum; k++) {
-        pinModes[k].unshift(k, 'pinModeMenu');
-        therouter.message(0, pinModes[k]);
+        pinModes[k].unshift(k, 'setMenu');
+        therouter.message(pinModes[k]);
         pinModes[k].shift()    
-        post('The new array')
-        post()
-        post(pinModes[k])
-        post()
     }
     
     //Set up Maxuino Gui Window Upon Loading Board

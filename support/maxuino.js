@@ -1,7 +1,7 @@
 /*
 Maxuino JS - decodes and encodes commands that are Max and arduino familiar for the serial port and then Firmata
-Chris Coleman and Ali Momeni 
-2009-2013
+Chris Coleman, Ali Momeni and Willy Nolan
+2009-2014
 */
 
 //these are basic parameters interpreted by Max so it knows how many inlets and outlets we are using

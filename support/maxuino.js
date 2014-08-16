@@ -452,7 +452,7 @@ function boardConfig() {
 
     //Set pin selection Window
     for(var k = 0; k < pinNum; k++) {
-        pinModes[k].unshift(k);
+        pinModes[k].unshift(k, 'pinModeMenu');
         therouter.message(0, pinModes[k]);
         pinModes[k].shift()    
         post('The new array')

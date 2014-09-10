@@ -1,7 +1,7 @@
 /*
 Maxuino JS - decodes and encodes commands that are Max and arduino familiar for the serial port and then Firmata
-Chris Coleman and Ali Momeni 
-2009-2013
+Chris Coleman, Ali Momeni and Willy Nolan
+2009-2014
 */
 
 //these are basic parameters interpreted by Max so it knows how many inlets and outlets we are using
@@ -35,15 +35,15 @@ for (var p = 0; p < portsbyte.length; p++) { portsbyte[p] = 0; }
 for (var q = 0; q < digiCombo.length; q++) { digiCombo[q] = 0; }
 
 //Pin Gui Objects
-var pins = new Array(128);
-var comments = new Array(128);
-var therouter;
-var thefunnel;
-var maxuinoGui = this.patcher.getnamed('maxuino-gui');
-var tomaxuino = maxuinoGui.subpatcher().getnamed("tomaxuino");
-var guiOn = maxuinoGui.subpatcher().getnamed("guiOn");
-var guiUpdate = maxuinoGui.subpatcher().getnamed("guiUpdate");
-var bgColor;
+var pins = new Array(128),  
+    comments = new Array(128),
+    therouter,
+    thefunnel,
+    maxuinoGui = this.patcher.getnamed('maxuino-gui'),
+    tomaxuino = maxuinoGui.subpatcher().getnamed("tomaxuino"),
+    guiOn = maxuinoGui.subpatcher().getnamed("guiOn"),
+    guiUpdate = maxuinoGui.subpatcher().getnamed("guiUpdate"),
+    bgColor;
 
 //track total number of pins for the current board
 var pinTotal = 0;
@@ -68,19 +68,17 @@ function init() {
     for (var p = 0; p < portsbyte.length; p++) { portsbyte[p] = 0; }
     for (var q = 0; q < digiCombo.length; q++) { digiCombo[q] = 0; }
     pinTotal = 0; //reset our pin numbers
-	pinCapabQ(); //see what our board is capable of
+	pinCapabQ(); //check board capabilities
 	analogMappingQ(); //figure out how our analog pins are mapped
 }
 
 //board pin configuration query
 function pinCapabQ(){ 
-   
     outlet(0, 240, 107, 247);
 }
 
 //board analog ping mapping query
 function analogMappingQ(){ 
-   
     outlet(0, 240, 105, 247);
 }
 
@@ -108,6 +106,7 @@ function save() {
     tsk = new Task(save2, this);  
     tsk.schedule(1000); //wait while the arduino sends back the new information
 }
+
 function save2() {
     var saveString = ''; //our string which will hold the whole series of save commands
     for (var pin = 0; pin < pinModes.length; pin++) {  //for any pins that have been changed, capture their mode and value
@@ -127,8 +126,7 @@ function save2() {
 }
 
 //changes all pin modes
-function pinMode(a, b)
-{
+function pinMode(a, b) {
     if (a>127)    a = 127;
     if (b<0)    b = 0;
     if (b>4)    b = 4;
@@ -217,10 +215,6 @@ function servoConfig(a, b, c) {
     maxmsb = ((c & 128) > 0);
     outlet(0,240, 112, a, minlsb, minmsb, maxlsb, maxmsb, 247);
 }
-
-
-
-
 
 function stepperConfig() {
     var cases = 0;
@@ -456,6 +450,13 @@ function boardConfig() {
     bgColor.message("presentation_rect", 181, 2.6, 23*pinNum, 165); 
     bgColor.message("bgcolor", 0.09, .56, .58); 
 
+    //Set pin selection menu
+    for(var k = 0; k < pinNum; k++) {
+        pinModes[k].unshift(k, 'setMenu');
+        therouter.message(pinModes[k]);
+        pinModes[k].shift()    
+    }
+    
     //Set up Maxuino Gui Window Upon Loading Board
     var xx = 250; //Place holder for window starting position 
     var yy = 150; //Place holder for window starting position
